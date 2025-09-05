@@ -88,3 +88,306 @@
   </header>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomadiq Travel Destinations</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      background-color: #F9FAF8;
+      color: #2C786C;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #2C786C;
+      color: #F9FAF8;
+      position: relative;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4em;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      color: #F9FAF8;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #A7D8F5;
+    }
+
+    /* Hamburger Button */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #F9FAF8;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Mobile Menu */
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #2C786C;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 8px;
+      padding: 15px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #A7D8F5, #F9FAF8);
+    }
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      color: #2C786C;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1em;
+      max-width: 90%;
+      margin: 0 auto;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #F4EBD0;
+    }
+
+    .about h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #2C786C;
+    }
+
+    .about p {
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 1em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* CTA Section */
+    .cta {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #90C9B7;
+      color: #fff;
+    }
+
+    .cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      font-size: 1em;
+      margin-bottom: 25px;
+      color: #f9f9f9;
+    }
+
+    .cta button {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1em;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background-color: #2C786C;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta button:hover {
+      background-color: #256158;
+      transform: scale(1.05);
+    }
+
+    /* Responsive Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Desktop Layout - 600px and up */
+    @media (min-width: 600px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      nav {
+        display: block !important;
+        position: static;
+        background: none;
+        width: auto;
+        padding: 0;
+      }
+
+      nav ul {
+        flex-direction: row;
+      }
+
+      .hero {
+        padding: 100px 40px;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+        max-width: 700px;
+      }
+
+      .about h2 {
+        font-size: 2em;
+      }
+
+      .about p {
+        font-size: 1.1em;
+        max-width: 700px;
+      }
+
+      .cta h2 {
+        font-size: 2em;
+      }
+
+      .cta p {
+        font-size: 1.1em;
+        max-width: 600px;
+        margin: 0 auto 25px;
+      }
+    }
+
+    /* Show hamburger only on mobile */
+    @media (max-width: 599px) {
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌍 Nomadiq Travel Destinations</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Explore Sustainable Travel</h1>
+    <p>
+      Discover the world while protecting it. At Nomadiq Travel Destinations, we
+      believe in journeys that celebrate cultures, preserve nature, and promote
+      eco-friendly adventures for a brighter tomorrow.
+    </p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Nomadiq Travel Destinations</h2>
+    <p>
+      At Nomadiq Travel Destinations, our mission is to create unforgettable
+      journeys that leave a positive impact on the planet. We specialize in
+      eco-friendly travel experiences that respect local cultures, support
+      sustainable communities, and protect the natural world for generations to
+      come.
+    </p>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Plan your next adventure with us and make every trip a step toward a greener planet.</p>
+    <button onclick="window.location.href='#';">Plan Your Trip</button>
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
